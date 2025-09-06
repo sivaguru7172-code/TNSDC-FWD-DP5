@@ -1,0 +1,107 @@
+/* Reset & fonts */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#071021;color:#f3f6fb;line-height:1.5}
+
+/* Topbar */
+.topbar{position:sticky;top:0;z-index:40;background:linear-gradient(180deg,rgba(7,16,33,0.6),rgba(7,16,33,0.3));backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.nav-inner{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 16px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:48px;height:48px;border-radius:8px;background-image:url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800');background-size:cover;border:2px solid rgba(255,255,255,0.06)}
+.title{font-weight:700;color:#dbeafe}
+.tag{font-size:12px;color:#9fb6c1}
+.nav-links{display:flex;gap:12px}
+.nav-links a{color:#eaf6ff;text-decoration:none;padding:8px 10px;border-radius:8px;font-weight:600}
+.nav-links a:hover{background:rgba(255,255,255,0.02)}
+
+/* Snow canvas - covers full screen */
+#snow-canvas{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:30}
+
+/* HERO */
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.hero-overlay{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?w=1600&q=80&auto=format&fit=crop');background-size:cover;background-position:center;filter:brightness(.35) contrast(.9);z-index:0}
+.hero-content{position:relative;z-index:2;max-width:1000px;padding:20px}
+.hero h1{font-size:44px;color:#fff;margin-bottom:8px;text-shadow:0 6px 20px rgba(0,0,0,0.6)}
+.hero p{color:#dbeafe;margin-bottom:14px}
+.btn{padding:10px 14px;border-radius:999px;border:0;cursor:pointer;font-weight:700}
+.primary{background:linear-gradient(90deg,#7dd3fc,#60a5fa);color:#071021}
+.ghost{background:transparent;border:1px solid rgba(255,255,255,0.08);color:#eaf6ff}
+
+/* Main container */
+main{max-width:1100px;margin:auto;padding:28px 16px 80px}
+
+/* Sections */
+.section{margin-top:28px}
+.section.alt{background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent);padding:18px;border-radius:12px}
+.section-head{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.section-head h2{color:#a5f3fc;font-size:22px}
+.section-head p{color:#9fb6c1;font-size:14px}
+
+/* Grid cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(0,0,0,0.12));border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03);box-shadow:0 10px 30px rgba(2,6,23,0.6);transition:transform .25s}
+.card:hover{transform:translateY(-8px)}
+.card img{width:100%;height:200px;object-fit:cover;display:block}
+.card-body{padding:12px}
+.card-body h3{margin:0 0 8px;color:#e6f6ff}
+.card-body p{color:#9fb6c1;font-size:14px}
+.meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.price{color:#7dd3fc;font-weight:800}
+
+/* Activities row */
+.activities-row{display:flex;gap:12px;flex-wrap:wrap}
+.activity{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:10px;border-radius:10px;width:calc(33.333% - 8px);min-width:220px;text-align:center}
+.activity img{width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:8px}
+.activity h4{margin-bottom:6px;color:#dbeafe}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.gallery-grid img{width:100%;height:160px;object-fit:cover;border-radius:8px;border:1px solid rgba(255,255,255,0.03);cursor:pointer;transition:transform .2s}
+.gallery-grid img:hover{transform:scale(1.03)}
+
+/* Booking */
+.booking-wrap{display:grid;grid-template-columns:1fr 320px;gap:14px;align-items:start}
+.booking-form{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+.booking-form label{display:block;font-weight:600;margin:8px 0 6px;color:#cdeaf8}
+.booking-form input, .booking-form select{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:#eaf6ff}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.summary{margin-top:10px;padding:10px;border-radius:8px;background:rgba(0,0,0,0.18);color:#9fb6c1}
+.info-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+
+/* Footer */
+footer{padding:18px;text-align:center;color:#9fb6c1;border-top:1px solid rgba(255,255,255,0.03);margin-top:24px}
+
+/* Modals */
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:60;background:linear-gradient(rgba(2,6,12,0.6), rgba(2,6,12,0.9));padding:16px}
+.modal img{max-width:100%;max-height:80vh;border-radius:8px}
+.details-card{background:#071021;border-radius:10px;overflow:hidden;max-width:900px;width:100%;display:grid;grid-template-columns:1fr 320px}
+.details-card img{height:100%;object-fit:cover}
+.details-body{padding:14px;color:#dbeafe}
+.close{position:absolute;right:18px;top:18px;background:transparent;border:0;color:#cdeaf8;font-weight:700;font-size:20px;cursor:pointer}
+
+/* Responsive */
+@media (max-width:900px){
+  .activities-row{flex-direction:column}
+  .booking-wrap{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+@media (max-width:520px){
+  .hero h1{font-size:28px}
+  .card img{height:160px}
+  .gallery-grid img{height:130px}
+}
+.about-wrap {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-pic {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #7dd3fc;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}

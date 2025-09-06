@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FrostVale Resort — Winter Escape</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Snow canvas (on top) -->
+  <canvas id="snow-canvas" aria-hidden="true"></canvas>
+
+  <!-- NAVBAR -->
+  <header class="topbar">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="title">FrostVale Resort</div>
+          <div class="tag">Winter • Snow • Cozy Retreat</div>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="Main">
+        <a href="#home">Home</a>
+        <a href="#cottages">Cottages</a>
+        <a href="#activities">Activities</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#book">Book</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Escape to FrostVale</h1>
+      <p>Cozy mountain cottages • Snowy trails • Warm bonfires</p>
+      <div class="hero-cta">
+        <button class="btn primary" onclick="document.getElementById('book').scrollIntoView({behavior:'smooth'})">Book Your Stay</button>
+        <button class="btn ghost" onclick="document.getElementById('cottages').scrollIntoView({behavior:'smooth'})">View Cottages</button>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Cottages -->
+    <section id="cottages" class="section">
+      <div class="section-head">
+        <h2>Warm Cottages</h2>
+        <p>Handpicked cozy cottages with mountain view & fireplace</p>
+      </div>
+      <div class="grid cottages-grid">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80&auto=format&fit=crop" alt="Cottage 1">
+          <div class="card-body">
+            <h3>Alpine Chalet</h3>
+            <p>Private fireplace, lake view, perfect for couples.</p>
+            <div class="meta">
+              <div class="price">₹6,500 / night</div>
+              <button class="btn small" onclick="openDetails('Alpine Chalet','Large windows, fireplace, 1 queen bed','https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&q=80&auto=format&fit=crop')">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?w=1200&q=80&auto=format&fit=crop" alt="Cottage 2">
+          <div class="card-body">
+            <h3>Snowview Lodge</h3>
+            <p>Family cottage with game room & heated floors.</p>
+            <div class="meta">
+              <div class="price">₹9,000 / night</div>
+              <button class="btn small" onclick="openDetails('Snowview Lodge','Family room, game area, fireplace','https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?w=1200&q=80&auto=format&fit=crop')">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop" alt="Cottage 3">
+          <div class="card-body">
+            <h3>Pine Retreat</h3>
+            <p>Wood-fired sauna, private deck, nearby ski shuttle.</p>
+            <div class="meta">
+              <div class="price">₹7,200 / night</div>
+              <button class="btn small" onclick="openDetails('Pine Retreat','Sauna, private deck, 2 beds','https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80&auto=format&fit=crop')">Details</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Activities -->
+    <section id="activities" class="section alt">
+      <div class="section-head">
+        <h2>Winter Activities</h2>
+        <p>Skiing, snowboarding, snowman contests & bonfires</p>
+      </div>
+
+      <div class="activities-row">
+        <div class="activity">
+          <img src="https://images.unsplash.com/photo-1519817650390-64a93db511aa?w=1000&q=80&auto=format&fit=crop" alt="Skiing">
+          <h4>Ski Slopes</h4>
+          <p>Guided slopes for beginners & experts.</p>
+        </div>
+        <div class="activity">
+          <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1000&q=80&auto=format&fit=crop" alt="Bonfire">
+          <h4>Bonfire Nights</h4>
+          <p>Live music, hot cocoa & marshmallows.</p>
+        </div>
+        <div class="activity">
+          <img src="https://images.unsplash.com/photo-1512813195386-6cf811ad3542?w=1000&q=80&auto=format&fit=crop" alt="Snowman">
+          <h4>Snow Play</h4>
+          <p>Snowman contests & family snowball fights.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section">
+      <div class="section-head">
+        <h2>Photo Gallery</h2>
+        <p>Moments captured at FrostVale</p>
+      </div>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1455763916899-e8b50eca9967?w=1000&q=80&auto=format&fit=crop" alt="Gallery1" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000&q=80&auto=format&fit=crop" alt="Gallery2" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=1000&q=80&auto=format&fit=crop" alt="Gallery3" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?w=1000&q=80&auto=format&fit=crop" alt="Gallery4" onclick="openLightbox(this.src)">
+      </div>
+    </section>
+    <!-- About Me -->
+<section id="about" class="section">
+  <div class="section-head">
+    <h2>About Me</h2>
+    <p>Meet the creator behind FrostVale Resort project</p>
+  </div>
+  <div class="about-wrap">
+    <img src="myphoto/myphoto.jpg" alt="My pictures" class="about-pic">
+    <div>
+      <h3>Hello! 👋</h3>
+      <p>
+        I am SANDHIYA P, a passionate web developer and designer.  
+        I love creating beautiful websites and this “Winter Resort” is one of my creative projects.  
+        ❄️ Enjoy the snow vibes!
+      </p>
+    </div>
+  </div>
+</section>
+
+    <!-- Booking -->
+    <section id="book" class="section alt">
+      <div class="section-head">
+        <h2>Book Your Stay</h2>
+        <p>Choose dates, cottage & number of guests</p>
+      </div>
+      <div class="booking-wrap">
+        <form id="bookingForm" class="booking-form">
+          <label for="bfname">Full name</label>
+          <input id="bfname" name="name" required placeholder="Your name">
+
+          <label for="bemail">Email</label>
+          <input id="bemail" name="email" type="email" required placeholder="you@example.com">
+
+          <div class="row">
+            <div>
+              <label for="cottage">Cottage</label>
+              <select id="cottage" name="cottage" onchange="calculateTotal()">
+                <option value="Alpine Chalet" data-price="6500">Alpine Chalet — ₹6,500</option>
+                <option value="Snowview Lodge" data-price="9000">Snowview Lodge — ₹9,000</option>
+                <option value="Pine Retreat" data-price="7200">Pine Retreat — ₹7,200</option>
+              </select>
+            </div>
+            <div>
+              <label for="nights">Nights</label>
+              <input id="nights" name="nights" type="number" value="1" min="1" onchange="calculateTotal()">
+            </div>
+          </div>
+
+          <label for="guests">Guests</label>
+          <input id="guests" name="guests" type="number" value="2" min="1">
+
+          <div class="summary">
+            <div>Price per night: <span id="unit">₹6,500</span></div>
+            <div>Nights: <span id="nspan">1</span></div>
+            <div style="margin-top:8px">Total: <strong id="total">₹6,500</strong></div>
+          </div>
+
+          <button type="submit" class="btn primary">Book Now (Demo)</button>
+        </form>
+
+        <aside class="info-card">
+          <h4>Need help?</h4>
+          <p>Email: <a href="mailto:stay@frostvale.example">stay@frostvale.example</a></p>
+          <p>Phone: +91 98765 43210</p>
+          <p class="muted">Free cancellation within 48 hours of booking (demo).</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2025 FrostVale Resort · Winter Escape</div>
+  </footer>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="modal" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Preview">
+  </div>
+
+  <!-- Details modal -->
+  <div id="detailsModal" class="modal" onclick="closeDetails(event)">
+    <div class="details-card">
+      <button class="close" onclick="closeDetails(event)">✕</button>
+      <img id="details-img" src="" alt="Details image">
+      <div class="details-body">
+        <h3 id="details-title"></h3>
+        <p id="details-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js" defer></script>
+</body>
+</html>
